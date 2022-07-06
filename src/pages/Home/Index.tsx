@@ -7,10 +7,15 @@ type ProfileResponse = {
   avatar_url: string;
 }
 
+type User = {
+  name: string;
+  avatar: string;
+}
+
 export function Index() {
   const [studentName, setStudentName] = useState("");
   const [students, setStudents] = useState<CardProps[]>([]);
-  const [data, setData] = useState({ name: "", avatar: "" });
+  const [data, setData] = useState<User>({} as User);
 
   function handleAddStudent() {
     const newStudent = {
