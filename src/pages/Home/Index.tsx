@@ -1,9 +1,15 @@
 import "./styles.css";
-import { Card } from "../../components/Card";
+import { Card, CardProps } from "../../components/Card";
 import React, { useState, useEffect } from "react";
+
+type ProfileResponse = {
+  name: string;
+  avatar_url: string;
+}
+
 export function Index() {
   const [studentName, setStudentName] = useState("");
-  const [students, setStudents] = useState([]);
+  const [students, setStudents] = useState<CardProps[]>([]);
   const [data, setData] = useState({ name: "", avatar: "" });
 
   function handleAddStudent() {
